@@ -6,4 +6,8 @@
     <string name="todo">TODO</string>
     <string name="todo1">TODO</string>
     <string name="inventory_simplified">Inventory Simplified</string>
+    <string name="items">Items</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="menu">Menu</string>
+    <string name="search">Search</string>
 </resources>

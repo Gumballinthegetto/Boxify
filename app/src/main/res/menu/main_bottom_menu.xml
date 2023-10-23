@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menuDashboard"
+        android:title="@string/dashboard"
+        android:icon="@drawable/pale_dashboard">
+    </item>
+    <item android:id="@+id/menuItem"
+        android:title="@string/items"
+        android:icon="@drawable/pale_product">
+    </item>
+    <item android:id="@+id/menuSearch"
+        android:title="@string/search"
+        android:icon="@drawable/pale_search">
+    </item>
+    <item android:id="@+id/menuMenu"
+        android:title="@string/menu"
+        android:icon="@drawable/pale_menu">
+    </item>
+
+</menu>
