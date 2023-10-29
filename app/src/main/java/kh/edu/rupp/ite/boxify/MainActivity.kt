@@ -1,47 +1,46 @@
 package kh.edu.rupp.ite.boxify
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.TaskStackBuilder
 import androidx.fragment.app.Fragment
 import kh.edu.rupp.ite.boxify.databinding.ActivityMainBinding
-import kh.edu.rupp.ite.boxify.ui.DashBoardFragment
-import kh.edu.rupp.ite.boxify.ui.ItemFragment
-import kh.edu.rupp.ite.boxify.ui.MenuFragment
-import kh.edu.rupp.ite.boxify.ui.SearchFragment
+import kh.edu.rupp.ite.boxify.ui.StartupDashBoardFragment
+import kh.edu.rupp.ite.boxify.ui.StartupItemFragment
+import kh.edu.rupp.ite.boxify.ui.StartupMenuFragment
+import kh.edu.rupp.ite.boxify.ui.StartupSearchFragment
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val dashBoardFragment = DashBoardFragment()
-    private val itemFragment = ItemFragment()
-    private val menuFragment = MenuFragment()
-    private val searchFragment = SearchFragment()
+    private val startupDashBoardFragment = StartupDashBoardFragment()
+    private val startupItemFragment = StartupItemFragment()
+    private val startupMenuFragment = StartupMenuFragment()
+    private val startupSearchFragment = StartupSearchFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        showFragment(dashBoardFragment)
+        showFragment(startupDashBoardFragment)
 
         binding.mainBottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.menuDashboard -> {
-                    showFragment(dashBoardFragment)
+                    showFragment(startupDashBoardFragment)
                     true
                 }
                 R.id.menuItem -> {
-                    showFragment(itemFragment)
+                    showFragment(startupItemFragment)
                     true
                 }
                 R.id.menuSearch -> {
-                    showFragment(searchFragment)
+                    showFragment(startupSearchFragment)
                     true
                 }
                 R.id.menuMenu -> {
-                    showFragment(menuFragment)
+                    showFragment(startupMenuFragment)
                     true
                 }
                 else -> {
