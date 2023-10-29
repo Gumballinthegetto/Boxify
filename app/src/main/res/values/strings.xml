@@ -13,4 +13,6 @@
     <string name="already_have_an_account">Already have an account?</string>
     <string name="search_filter_export"><![CDATA[Search, Filter & Export]]></string>
     <string name="track_every_detail">Track Every Detail</string>
+    <string name="it_is_empty_here">It is empty here...</string>
+    <string name="add_your_first_item_by_tapping_the">Add your first item by tapping the | + |</string>
 </resources>
