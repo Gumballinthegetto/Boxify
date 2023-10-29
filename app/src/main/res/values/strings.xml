@@ -15,4 +15,12 @@
     <string name="track_every_detail">Track Every Detail</string>
     <string name="it_is_empty_here">It is empty here...</string>
     <string name="add_your_first_item_by_tapping_the">Add your first item by tapping the | + |</string>
+    <string name="john_doe">John Doe</string>
+    <string name="johndoe_gmail_com">johndoe@gmail.com</string>
+    <string name="help_amp_support"><![CDATA[Help & Support]]></string>
+    <string name="todo_report">TODO</string>
+    <string name="todo_help">TODO</string>
+    <string name="user_profile">User Profile</string>
+    <string name="reports">Reports</string>
+    <string name="settings">Settings</string>
 </resources>
