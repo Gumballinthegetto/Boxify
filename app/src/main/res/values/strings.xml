@@ -25,4 +25,6 @@
     <string name="settings">Settings</string>
     <string name="_1_0_0">1.0.0</string>
     <string name="log_in">Log in</string>
+    <string name="nothing_to_see_here">Nothing to see here...</string>
+    <string name="enter_text_to_start_your_search">Enter text to start your search</string>
 </resources>
