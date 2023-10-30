@@ -4,12 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kh.edu.rupp.ite.boxify.adapter.StartUpViewPager2Adapter
+import kh.edu.rupp.ite.boxify.base.BaseActivity
 import kh.edu.rupp.ite.boxify.databinding.ActivityStartupBinding
+import kh.edu.rupp.ite.boxify.helper.Constants
+import kh.edu.rupp.ite.boxify.redirect.Redirect
 import kh.edu.rupp.ite.boxify.ui.MainFirstPageFragment
 import kh.edu.rupp.ite.boxify.ui.MainSecondPageFragment
 import kh.edu.rupp.ite.boxify.ui.MainThirdPageFragment
 
-class StartupActivity : AppCompatActivity() {
+class StartupActivity : BaseActivity() {
 
     private lateinit var binding : ActivityStartupBinding
     private lateinit var adapter : StartUpViewPager2Adapter
@@ -21,7 +24,11 @@ class StartupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityStartupBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initView()
+        doAction()
+    }
 
+    private fun initView(){
         val startUpViewPager2 = binding.layoutViewPager2Startup
         adapter = StartUpViewPager2Adapter(supportFragmentManager, lifecycle)
 
@@ -30,10 +37,15 @@ class StartupActivity : AppCompatActivity() {
         adapter.addFragment(mainThirdPageFragment)
 
         startUpViewPager2.adapter = adapter
+    }
 
+    private fun doAction(){
         binding.getStartedBtn.setOnClickListener {
-            intent = Intent(it.context, MainActivity::class.java)
-            startActivity(intent)
+            Redirect.gotoMainActivity(this)
+        }
+
+        binding.actionLogin.setOnClickListener{
+            Redirect.gotoLoginOrSignupActivity(this, Constants.LOGIN)
         }
     }
 }

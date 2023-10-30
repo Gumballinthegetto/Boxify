@@ -8,7 +8,7 @@ import kh.edu.rupp.ite.boxify.databinding.ActivityMainBinding
 import kh.edu.rupp.ite.boxify.ui.StartupDashBoardFragment
 import kh.edu.rupp.ite.boxify.ui.StartupItemFragment
 import kh.edu.rupp.ite.boxify.ui.StartupMenuFragment
-import kh.edu.rupp.ite.boxify.ui.StartupSearchFragment
+import kh.edu.rupp.ite.boxify.ui.search.StartupSearchFragment
 
 class MainActivity : AppCompatActivity() {
 

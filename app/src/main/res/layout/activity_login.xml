@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.create_user.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_marginTop="16dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/boxify_logo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_back"
+            android:textSize="26sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/log_into_your_account"
+            android:textSize="16sp"/>
+
+        <!-- email -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:text="@string/email"
+                android:textColor="@color/md_theme_dark_shadow"
+                android:textSize="16sp"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_edt"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:paddingVertical="14dp"
+                android:hint="@string/enter_your_email"
+                android:background="@drawable/text_input_white_bg_drawable"
+                android:maxLines="1"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray_dark"/>
+
+        <!-- password -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:text="@string/password"
+                android:textColor="@color/md_theme_dark_shadow"
+                android:textSize="16sp"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_edt"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:paddingVertical="14dp"
+                android:hint="@string/enter_your_password"
+                android:background="@drawable/text_input_white_bg_drawable"
+                android:maxLines="1"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray_dark"/>
+
+        <TextView
+            android:id="@+id/action_forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="10dp"
+            android:text="@string/forgot_password"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:layout_marginTop="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:padding="15dp"
+            android:text="@string/by_creating_an_account_you_agree_to_boxify_s_terms_conditions_and_privacy_policy"
+            android:textSize="14sp"/>
+
+        <LinearLayout
+            android:id="@+id/action_continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_button_bg_drawable"
+            android:gravity="center"
+            android:layout_marginVertical="15dp"
+            android:layout_marginHorizontal="20dp"
+            android:padding="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/continue_"
+                android:textSize="16dp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+            <View
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_dark"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ok"
+                android:textSize="14sp"
+                android:paddingHorizontal="8dp"/>
+
+            <View
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_dark"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/action_signup_google"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_white_button_bg_drawable"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="15dp"
+            android:padding="15dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_in_with_google"
+                android:layout_centerInParent="true"
+                android:textSize="14sp"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New here?"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+            <TextView
+                android:id="@+id/action_create_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="10dp"
+                android:text="@string/create_account"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

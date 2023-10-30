@@ -1,4 +1,4 @@
-package kh.edu.rupp.ite.boxify.ui
+package kh.edu.rupp.ite.boxify.ui.search
 
 import android.os.Bundle
 import android.view.LayoutInflater

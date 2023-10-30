@@ -27,4 +27,16 @@
     <string name="log_in">Log in</string>
     <string name="nothing_to_see_here">Nothing to see here...</string>
     <string name="enter_text_to_start_your_search">Enter text to start your search</string>
+    <string name="welcome_back">Welcome back!</string>
+    <string name="log_into_your_account">Log into your account</string>
+    <string name="email">Email</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="password">Password</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="continue_">Continue</string>
+    <string name="by_creating_an_account_you_agree_to_boxify_s_terms_conditions_and_privacy_policy"><![CDATA[By creating an account, you agree to Boxify’s Terms & Conditions and Privacy Policy]]></string>
+    <string name="ok">OK</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="create_account">Create account</string>
 </resources>
