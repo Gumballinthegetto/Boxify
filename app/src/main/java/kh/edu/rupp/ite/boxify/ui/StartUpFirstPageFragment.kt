@@ -5,18 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import kh.edu.rupp.ite.boxify.databinding.FragmentMainDashboardBinding
+import kh.edu.rupp.ite.boxify.databinding.FragmentStartupFirstpageBinding
 
-class StartupDashBoardFragment : Fragment() {
+class StartUpFirstPageFragment : Fragment() {
 
-    private lateinit var binding: FragmentMainDashboardBinding
+    private lateinit var binding : FragmentStartupFirstpageBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMainDashboardBinding.inflate(inflater, container, false)
+        binding = FragmentStartupFirstpageBinding.inflate(inflater, container, false)
         return binding.root
     }
 }

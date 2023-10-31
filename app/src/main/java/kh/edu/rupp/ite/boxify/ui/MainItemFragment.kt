@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kh.edu.rupp.ite.boxify.databinding.FragmentMainItemBinding
 
-class StartupItemFragment : Fragment() {
+class MainItemFragment : Fragment() {
 
     private lateinit var binding: FragmentMainItemBinding
 

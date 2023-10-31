@@ -39,4 +39,7 @@
     <string name="ok">OK</string>
     <string name="sign_in_with_google">Sign in with Google</string>
     <string name="create_account">Create account</string>
+    <string name="or">OR</string>
+    <string name="new_here">New here?</string>
+    <string name="create_an_account">Create an account</string>
 </resources>

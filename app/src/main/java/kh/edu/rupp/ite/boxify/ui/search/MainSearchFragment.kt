@@ -1,22 +1,22 @@
-package kh.edu.rupp.ite.boxify.ui
+package kh.edu.rupp.ite.boxify.ui.search
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import kh.edu.rupp.ite.boxify.databinding.FragmentMainMenuBinding
+import kh.edu.rupp.ite.boxify.databinding.FragmentMainSearchBinding
 
-class StartupMenuFragment : Fragment() {
+class MainSearchFragment : Fragment() {
 
-    private lateinit var binding: FragmentMainMenuBinding
+    private lateinit var binding: FragmentMainSearchBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMainMenuBinding.inflate(inflater, container, false)
+        binding = FragmentMainSearchBinding.inflate(inflater, container, false)
         return binding.root
     }
 
