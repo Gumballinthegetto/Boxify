@@ -1,4 +1,4 @@
-package kh.edu.rupp.ite.boxify
+package kh.edu.rupp.ite.boxify.ui.activity
 
 import android.os.Bundle
 import kh.edu.rupp.ite.boxify.adapter.StartUpViewPager2Adapter
@@ -6,9 +6,9 @@ import kh.edu.rupp.ite.boxify.base.BaseActivity
 import kh.edu.rupp.ite.boxify.databinding.ActivityStartupBinding
 import kh.edu.rupp.ite.boxify.helper.Constants
 import kh.edu.rupp.ite.boxify.redirect.Redirect
-import kh.edu.rupp.ite.boxify.ui.StartUpFirstPageFragment
-import kh.edu.rupp.ite.boxify.ui.StartUpSecondPageFragment
-import kh.edu.rupp.ite.boxify.ui.StartUpThirdPageFragment
+import kh.edu.rupp.ite.boxify.ui.fragment.StartUpFirstPageFragment
+import kh.edu.rupp.ite.boxify.ui.fragment.StartUpSecondPageFragment
+import kh.edu.rupp.ite.boxify.ui.fragment.StartUpThirdPageFragment
 
 class StartupActivity : BaseActivity() {
 

@@ -1,22 +1,22 @@
-package kh.edu.rupp.ite.boxify.ui
+package kh.edu.rupp.ite.boxify.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import kh.edu.rupp.ite.boxify.databinding.FragmentStartupSecondpageBinding
+import kh.edu.rupp.ite.boxify.databinding.FragmentStartupThirdpageBinding
 
-class StartUpSecondPageFragment : Fragment() {
+class StartUpThirdPageFragment : Fragment() {
 
-    private lateinit var binding : FragmentStartupSecondpageBinding
+    private lateinit var binding : FragmentStartupThirdpageBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentStartupSecondpageBinding.inflate(inflater, container, false)
+        binding = FragmentStartupThirdpageBinding.inflate(inflater, container, false)
         return binding.root
     }
 }

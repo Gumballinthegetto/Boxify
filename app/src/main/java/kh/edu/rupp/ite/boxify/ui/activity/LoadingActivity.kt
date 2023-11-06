@@ -1,4 +1,4 @@
-package kh.edu.rupp.ite.boxify
+package kh.edu.rupp.ite.boxify.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
