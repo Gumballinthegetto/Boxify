@@ -1,18 +1,20 @@
-package kh.edu.rupp.ite.boxify
+package kh.edu.rupp.ite.boxify.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.TaskStackBuilder
 import androidx.fragment.app.Fragment
+import kh.edu.rupp.ite.boxify.R
 import kh.edu.rupp.ite.boxify.databinding.ActivityMainBinding
-import kh.edu.rupp.ite.boxify.ui.MainDashBoardFragment
-import kh.edu.rupp.ite.boxify.ui.MainItemFragment
-import kh.edu.rupp.ite.boxify.ui.MainMenuFragment
-import kh.edu.rupp.ite.boxify.ui.search.MainSearchFragment
+import kh.edu.rupp.ite.boxify.ui.fragment.MainDashBoardFragment
+import kh.edu.rupp.ite.boxify.ui.fragment.MainItemFragment
+import kh.edu.rupp.ite.boxify.ui.fragment.MainMenuFragment
+import kh.edu.rupp.ite.boxify.ui.fragment.search.MainSearchFragment
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
     private val mainDashBoardFragment = MainDashBoardFragment()
     private val mainItemFragment = MainItemFragment()
     private val mainMenuFragment = MainMenuFragment()
