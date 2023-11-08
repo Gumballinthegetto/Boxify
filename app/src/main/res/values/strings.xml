@@ -42,4 +42,9 @@
     <string name="or">OR</string>
     <string name="new_here">New here?</string>
     <string name="create_an_account">Create an account</string>
+    <string name="help_us_personalize_your_experience_nby_sharing_a_few_details_about_your_needs">Help us personalize your experience \nby sharing a few details about your needs.</string>
+    <string name="text_help_us">Help us personalize your experience by\nsharing a few details about your needs.</string>
+    <string name="a_bit_about_nyour_inventory">A bit about\nyour inventory</string>
+    <string name="what_are_you_using_boxify_to_track">What are you using Boxify to track?</string>
+    <string name="what_category_of_items_are_you_tracking">What category of items are you tracking?</string>
 </resources>

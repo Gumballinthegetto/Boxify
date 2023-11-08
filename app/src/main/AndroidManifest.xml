@@ -15,6 +15,15 @@
         android:theme="@style/Base.Theme.Boxify"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.QuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.create_user.AnswerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.QuestionActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.create_user.LoginActivity"
             android:exported="false" />
         <activity
