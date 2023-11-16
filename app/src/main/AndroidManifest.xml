@@ -15,16 +15,16 @@
         android:theme="@style/Base.Theme.Boxify"
         tools:targetApi="31">
         <activity
-            android:name=".ui.activity.create_user.LoginActivity"
+            android:name=".view.ui.activity.create_user.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.MainActivity"
+            android:name=".view.ui.activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.LoadingActivity"
+            android:name=".view.ui.activity.LoadingActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.StartupActivity"
+            android:name=".view.ui.activity.StartupActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

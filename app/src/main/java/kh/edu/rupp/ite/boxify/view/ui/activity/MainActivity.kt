@@ -1,4 +1,4 @@
-package kh.edu.rupp.ite.boxify.ui.activity
+package kh.edu.rupp.ite.boxify.view.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,10 +6,10 @@ import androidx.core.app.TaskStackBuilder
 import androidx.fragment.app.Fragment
 import kh.edu.rupp.ite.boxify.R
 import kh.edu.rupp.ite.boxify.databinding.ActivityMainBinding
-import kh.edu.rupp.ite.boxify.ui.fragment.MainDashBoardFragment
-import kh.edu.rupp.ite.boxify.ui.fragment.MainItemFragment
-import kh.edu.rupp.ite.boxify.ui.fragment.MainMenuFragment
-import kh.edu.rupp.ite.boxify.ui.fragment.search.MainSearchFragment
+import kh.edu.rupp.ite.boxify.view.ui.fragment.MainDashBoardFragment
+import kh.edu.rupp.ite.boxify.view.ui.fragment.MainItemFragment
+import kh.edu.rupp.ite.boxify.view.ui.fragment.MainMenuFragment
+import kh.edu.rupp.ite.boxify.view.ui.fragment.search.MainSearchFragment
 
 class MainActivity : AppCompatActivity() {
 
