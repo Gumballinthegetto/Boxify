@@ -25,7 +25,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        showFragment(mainDashBoardFragment)
+        if (savedInstanceState == null) {
+            showDefaultFragment()
+        }
 
         binding.mainBottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
@@ -59,6 +61,12 @@ class MainActivity : AppCompatActivity() {
     private fun showFragment(fragment: Fragment) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.layoutFrameMain, fragment)
+        fragmentTransaction.commit()
+    }
+
+    private fun showDefaultFragment() {
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.layoutFrameMain, mainDashBoardFragment)
         fragmentTransaction.commit()
     }
 }

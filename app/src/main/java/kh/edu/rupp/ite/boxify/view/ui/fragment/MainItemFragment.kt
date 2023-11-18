@@ -19,4 +19,19 @@ class MainItemFragment : Fragment() {
         binding = FragmentMainItemBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        showBottomDialog()
+    }
+
+    private fun showBottomDialog() {
+        binding.apply {
+            binding.itemAddItemBtn.setOnClickListener {
+                val itemPopUpMenu = MainItemPopupMenuFragment()
+                parentFragmentManager.let { itemPopUpMenu.show(it, MainItemPopupMenuFragment.TAG) }
+            }
+        }
+    }
 }

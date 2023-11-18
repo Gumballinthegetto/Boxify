@@ -18,6 +18,15 @@
             android:name=".view.ui.activity.create_user.LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.activity.create_user.AnswerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.QuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ui.activity.AddItemActivity"
+            android:exported="false"/>
+        <activity
             android:name=".view.ui.activity.MainActivity"
             android:exported="false" />
         <activity
