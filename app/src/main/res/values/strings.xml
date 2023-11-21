@@ -66,4 +66,20 @@
     <string name="add_item">Add Item</string>
     <string name="add_item_via_scan">Add Item via scan</string>
     <string name="add_folder">Add Folder</string>
+    <string name="cancel">Cancel</string>
+    <string name="user_cases">User Cases</string>
+    <string name="done">Done</string>
+    <string name="cataloging_personal_items">Cataloging personal items</string>
+    <string name="materials_for_manufacturing">Materials for manufacturing</string>
+    <string name="supplies_materials_parts_and_consumable_items">Supplies, materials, parts and consumable items</string>
+    <string name="type_other_option">Type other option</string>
+    <string name="others">Others</string>
+    <string name="office_supplies_and_stationery">Office supplies and stationery</string>
+    <string name="hardware_and_parts">Hardware and parts</string>
+    <string name="medical_supplies">Medical supplies</string>
+    <string name="personal_items">Personal items</string>
+    <string name="funiture">Funiture</string>
+    <string name="it_equipment">IT equipment</string>
+    <string name="items_types">Items types</string>
+    <string name="products_being_sold">Products being sold</string>
 </resources>
