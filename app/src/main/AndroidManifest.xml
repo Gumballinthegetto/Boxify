@@ -15,6 +15,9 @@
         android:theme="@style/Base.Theme.Boxify"
         tools:targetApi="31">
         <activity
+            android:name=".RegisterationActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.ui.activity.SecondDropdownActivity"
             android:exported="false" />
         <activity
@@ -27,7 +30,7 @@
             android:name=".ui.activity.create_user.AnswerActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.QuestionActivity"
+            android:name=".view.ui.activity.QuestionActivity"
             android:exported="false" />
         <activity
             android:name=".view.ui.activity.AddItemActivity"

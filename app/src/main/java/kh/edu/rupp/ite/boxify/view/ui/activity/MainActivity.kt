@@ -53,7 +53,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
     override fun onCreateSupportNavigateUpTaskStack(builder: TaskStackBuilder) {
         super.onCreateSupportNavigateUpTaskStack(builder)
     }
