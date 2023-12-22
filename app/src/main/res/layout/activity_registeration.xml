@@ -212,7 +212,7 @@
             android:text="Already have an account"
             android:textSize="14sp"/>
         <TextView
-            android:id="@+id/action_create_account"
+            android:id="@+id/action_Login_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
