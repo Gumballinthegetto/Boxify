@@ -1,15 +1,15 @@
-package kh.edu.rupp.ite.boxify.viewModel
+package kh.edu.rupp.ite.boxify.view_model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import kh.edu.rupp.ite.boxify.repository.UserRepository
+import kh.edu.rupp.ite.boxify.internet.service.ApiService
 
-class RegistrationViewModelFactory(private val userRepository: UserRepository) : ViewModelProvider.Factory {
+class RegistrationViewModelFactory(private val apiService: ApiService) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(RegistrationViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return RegistrationViewModel(userRepository) as T
+            return RegistrationViewModel(apiService) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

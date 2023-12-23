@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import kh.edu.rupp.ite.boxify.view.ui.activity.MainActivity
 import kh.edu.rupp.ite.boxify.base.BaseActivity
-import kh.edu.rupp.ite.boxify.databinding.ActivityRegisterationBinding
 import kh.edu.rupp.ite.boxify.helper.Constants
 import kh.edu.rupp.ite.boxify.view.ui.activity.create_user.LoginActivity
 import kh.edu.rupp.ite.boxify.view.ui.activity.create_user.RegistrationActivity

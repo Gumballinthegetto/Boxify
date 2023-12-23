@@ -1,4 +1,4 @@
-package kh.edu.rupp.ite.boxify.ui.activity.create_user
+package kh.edu.rupp.ite.boxify.view.ui.activity.create_user
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

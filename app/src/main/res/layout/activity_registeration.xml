@@ -132,7 +132,7 @@
             android:textSize="14sp"/>
 
         <LinearLayout
-            android:id="@+id/action_continue"
+            android:id="@+id/registerUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_button_bg_drawable"
