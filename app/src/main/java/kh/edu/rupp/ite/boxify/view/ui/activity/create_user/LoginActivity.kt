@@ -12,7 +12,7 @@ import kh.edu.rupp.ite.boxify.internet.client.ApiClient
 import kh.edu.rupp.ite.boxify.redirect.Redirect
 import kh.edu.rupp.ite.boxify.view.ui.activity.MainActivity
 import kh.edu.rupp.ite.boxify.view_model.LoginViewModel
-import kh.edu.rupp.ite.boxify.view_model.LoginViewModelFactory
+import kh.edu.rupp.ite.boxify.view_model.ViewModelFactory
 
 class LoginActivity : BaseActivity() {
     private lateinit var binding : ActivityLoginBinding
@@ -22,10 +22,15 @@ class LoginActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        // Initialize ViewModel with ApiService
-        loginViewModel = ViewModelProvider(this, LoginViewModelFactory(ApiClient.apiService))[LoginViewModel::class.java]
 
-        // ... (existing code)
+        //call function
+        observe()
+        doAction()
+    }
+
+    private fun observe(){
+        // Initialize ViewModel with ApiService
+        loginViewModel = ViewModelProvider(this, ViewModelFactory(ApiClient.apiService))[LoginViewModel::class.java]
 
         loginViewModel.loginResult.observe(this) { result ->
             if (result != null) {
@@ -45,10 +50,9 @@ class LoginActivity : BaseActivity() {
                 Toast.makeText(this, "An unexpected error occurred", Toast.LENGTH_SHORT).show()
             }
         }
-
-        doAction()
     }
 
+    // function button action
     private fun doAction(){
         binding.actionCreateAccount.setOnClickListener {
             Redirect.gotoSignupActivity(this, Constants.SIGNUP)

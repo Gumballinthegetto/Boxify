@@ -68,5 +68,11 @@ class LoginViewModel(private val apiService: ApiService) : ViewModel() {
                 _isLoading.value = false
             }
         }
+
+        // Function to log out the user
+        fun logoutUser() {
+            // Optionally, navigate to the login screen
+            _loginResult.value = null  // Reset login result
+        }
     }
 }

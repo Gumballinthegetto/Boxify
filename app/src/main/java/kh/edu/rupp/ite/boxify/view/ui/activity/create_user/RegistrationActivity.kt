@@ -11,7 +11,7 @@ import kh.edu.rupp.ite.boxify.databinding.ActivityRegisterationBinding
 import kh.edu.rupp.ite.boxify.helper.Constants
 import kh.edu.rupp.ite.boxify.internet.client.ApiClient.apiService
 import kh.edu.rupp.ite.boxify.redirect.Redirect
-import kh.edu.rupp.ite.boxify.view_model.RegistrationViewModelFactory
+import kh.edu.rupp.ite.boxify.view_model.ViewModelFactory
 
 class RegistrationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterationBinding
@@ -25,7 +25,7 @@ class RegistrationActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Initialize ViewModel with ApiService
-        viewModel = ViewModelProvider(this, RegistrationViewModelFactory(apiService)).get(RegistrationViewModel::class.java)
+        viewModel = ViewModelProvider(this, ViewModelFactory(apiService))[RegistrationViewModel::class.java]
 
         // Observe loading state
         viewModel.isLoading.observe(this) { isLoading ->
