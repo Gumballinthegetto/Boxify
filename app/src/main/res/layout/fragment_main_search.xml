@@ -35,7 +35,7 @@
 
         <include
             android:id="@+id/no_result_layout"
-            layout="@layout/seach_not_found_layout"/>
+            layout="@layout/search_not_found_layout"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_result"

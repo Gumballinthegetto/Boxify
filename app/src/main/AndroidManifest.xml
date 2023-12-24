@@ -15,16 +15,34 @@
         android:theme="@style/Base.Theme.Boxify"
         tools:targetApi="31">
         <activity
-            android:name=".ui.create_user.LoginActivity"
+            android:name=".view.ui.activity.create_user.RegistrationActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.ui.activity.SecondDropdownActivity"
             android:exported="false" />
         <activity
-            android:name=".LoadingActivity"
+            android:name=".view.ui.activity.FirstDropdownActivity"
             android:exported="false" />
         <activity
-            android:name=".StartupActivity"
+            android:name=".view.ui.activity.create_user.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.create_user.AnswerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ui.activity.QuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ui.activity.AddItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ui.activity.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ui.activity.LoadingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ui.activity.StartupActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

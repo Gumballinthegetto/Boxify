@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.create_user.LoginActivity">
+    tools:context=".view.ui.activity.create_user.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:layout_marginTop="16dp"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/boxify_logo"/>
+            android:src="@drawable/ic_launcher_foreground"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:text="@string/welcome_back"
             android:textSize="26sp"
             android:textStyle="bold"/>
@@ -42,6 +46,7 @@
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
+                android:paddingEnd="0dp"
                 android:text="@string/email"
                 android:textColor="@color/md_theme_dark_shadow"
                 android:textSize="16sp"/>
@@ -49,7 +54,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email_edt"
                 android:layout_weight="1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:paddingVertical="14dp"
@@ -71,6 +76,7 @@
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
+                android:paddingEnd="0dp"
                 android:text="@string/password"
                 android:textColor="@color/md_theme_dark_shadow"
                 android:textSize="16sp"/>
@@ -78,7 +84,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_edt"
                 android:layout_weight="1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:paddingVertical="14dp"
@@ -96,12 +102,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
-            android:padding="10dp"
+            android:padding="25dp"
             android:text="@string/forgot_password"
             android:textSize="14sp"/>
 
         <TextView
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
@@ -110,7 +116,7 @@
             android:textSize="14sp"/>
 
         <LinearLayout
-            android:id="@+id/action_continue"
+            android:id="@+id/action_Login_Continue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_button_bg_drawable"
@@ -122,7 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/continue_"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:textColor="@color/white"/>
         </LinearLayout>
 
@@ -139,7 +145,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ok"
+                android:text="@string/or"
                 android:textSize="14sp"
                 android:paddingHorizontal="8dp"/>
 
@@ -162,6 +168,8 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/google_logo"
                 android:layout_centerVertical="true"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -172,26 +180,30 @@
                 android:textColor="@color/black"/>
         </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New here?"
-                android:textStyle="bold"
-                android:textSize="14sp"/>
-            <TextView
-                android:id="@+id/action_create_account"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?android:attr/selectableItemBackground"
-                android:padding="10dp"
-                android:text="@string/create_account"
-                android:textSize="14sp"/>
-        </LinearLayout>
-
     </LinearLayout>
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_here"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/action_create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="10dp"
+            android:text="@string/create_an_account"
+            android:textStyle="bold"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
