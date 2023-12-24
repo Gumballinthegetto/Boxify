@@ -9,10 +9,15 @@ import kh.edu.rupp.ite.boxify.data.LoginRequest
 import kh.edu.rupp.ite.boxify.data.LoginResponse
 import kh.edu.rupp.ite.boxify.data.RegistrationRequest
 import kh.edu.rupp.ite.boxify.data.RegistrationResponse
+import kh.edu.rupp.ite.boxify.internet.client.SessionManager
 import kh.edu.rupp.ite.boxify.internet.service.ApiService
 import kotlinx.coroutines.launch
 
-class LoginViewModel(private val apiService: ApiService) : ViewModel() {
+class LoginViewModel(
+    private val apiService: ApiService,
+    private val sessionManager: SessionManager
+) : ViewModel() {
+
     private val _loginResult = MutableLiveData<LoginResponse?>()
     val loginResult: MutableLiveData<LoginResponse?> get() = _loginResult
 
@@ -31,7 +36,7 @@ class LoginViewModel(private val apiService: ApiService) : ViewModel() {
                 val user = LoginRequest(email, password)
                 Log.d("LoginViewModel", "Raw API Response: $user")
 
-                _loginResult.value = LoginResponse(true, "Login successful",null)
+                _loginResult.value = LoginResponse(true, "Login successful", null)
 
                 val response = apiService.loginUser(user)
 
@@ -49,13 +54,15 @@ class LoginViewModel(private val apiService: ApiService) : ViewModel() {
                     } else {
                         // Handle unexpected null response body
                         Log.e("LoginViewModel", "Unexpected null response body")
-                        _loginResult.value = LoginResponse(false, "Login failed. Please try again.", null)
+                        _loginResult.value =
+                            LoginResponse(false, "Login failed. Please try again.", null)
                     }
                 } else {
                     // Handle other status codes or error conditions
                     val errorBody = response.errorBody()?.string()
                     Log.e("LoginViewModel", "Unsuccessful response: ${response.code()}, $errorBody")
-                    _loginResult.value = LoginResponse(false, "Login failed. Please try again.", null)
+                    _loginResult.value =
+                        LoginResponse(false, "Login failed. Please try again.", null)
                 }
 
             } catch (e: Exception) {
@@ -63,7 +70,8 @@ class LoginViewModel(private val apiService: ApiService) : ViewModel() {
                 Log.e("LoginViewModel", "Error during login", e)
 
                 // Provide a more descriptive error message
-                _loginResult.value = LoginResponse(false, "An unexpected error occurred: ${e.message}", null)
+                _loginResult.value =
+                    LoginResponse(false, "An unexpected error occurred: ${e.message}", null)
             } finally {
                 _isLoading.value = false
             }
@@ -71,8 +79,10 @@ class LoginViewModel(private val apiService: ApiService) : ViewModel() {
 
         // Function to log out the user
         fun logoutUser() {
-            // Optionally, navigate to the login screen
-            _loginResult.value = null  // Reset login result
+            // Clear authentication token
+            sessionManager.clearAuthToken()
+            // Set login result to null (indicating user is logged out)
+            _loginResult.value = null
         }
     }
 }

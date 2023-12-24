@@ -10,12 +10,13 @@ import androidx.lifecycle.ViewModelProvider
 import kh.edu.rupp.ite.boxify.databinding.ActivityRegisterationBinding
 import kh.edu.rupp.ite.boxify.helper.Constants
 import kh.edu.rupp.ite.boxify.internet.client.ApiClient.apiService
+import kh.edu.rupp.ite.boxify.internet.client.SessionManager
 import kh.edu.rupp.ite.boxify.redirect.Redirect
 import kh.edu.rupp.ite.boxify.view_model.ViewModelFactory
 
 class RegistrationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterationBinding
-
+    private lateinit var sessionManager: SessionManager
     private lateinit var viewModel: RegistrationViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,8 +25,13 @@ class RegistrationActivity : AppCompatActivity() {
         binding = ActivityRegisterationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Initialize sessionManager
+        sessionManager = SessionManager(this)
+
         // Initialize ViewModel with ApiService
-        viewModel = ViewModelProvider(this, ViewModelFactory(apiService))[RegistrationViewModel::class.java]
+        viewModel = ViewModelProvider(
+            this,
+            ViewModelFactory(apiService, sessionManager))[RegistrationViewModel::class.java]
 
         // Observe loading state
         viewModel.isLoading.observe(this) { isLoading ->

@@ -9,6 +9,7 @@ import kh.edu.rupp.ite.boxify.base.BaseActivity
 import kh.edu.rupp.ite.boxify.databinding.ActivityLoginBinding
 import kh.edu.rupp.ite.boxify.helper.Constants
 import kh.edu.rupp.ite.boxify.internet.client.ApiClient
+import kh.edu.rupp.ite.boxify.internet.client.SessionManager
 import kh.edu.rupp.ite.boxify.redirect.Redirect
 import kh.edu.rupp.ite.boxify.view.ui.activity.MainActivity
 import kh.edu.rupp.ite.boxify.view_model.LoginViewModel
@@ -17,20 +18,23 @@ import kh.edu.rupp.ite.boxify.view_model.ViewModelFactory
 class LoginActivity : BaseActivity() {
     private lateinit var binding : ActivityLoginBinding
     private lateinit var loginViewModel: LoginViewModel
+    private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Initialize sessionManager
+        sessionManager = SessionManager(this)
+
         //call function
         observe()
         doAction()
     }
-
     private fun observe(){
         // Initialize ViewModel with ApiService
-        loginViewModel = ViewModelProvider(this, ViewModelFactory(ApiClient.apiService))[LoginViewModel::class.java]
+        loginViewModel = ViewModelProvider(this, ViewModelFactory(ApiClient.apiService, sessionManager))[LoginViewModel::class.java]
 
         loginViewModel.loginResult.observe(this) { result ->
             if (result != null) {
