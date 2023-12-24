@@ -16,7 +16,7 @@ object Redirect : BaseActivity(){
     }
 
     fun gotoMainActivity(activity: Activity){
-        val intent = Intent(activity , MainActivity::class.java)
+        val intent = Intent(activity , LoginActivity::class.java)
         gotoActivity(activity, intent)
     }
 
