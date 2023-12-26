@@ -1,32 +1,24 @@
 package kh.edu.rupp.ite.boxify.view.ui.activity.create_user
 
 import kh.edu.rupp.ite.boxify.view_model.RegistrationViewModel
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import kh.edu.rupp.ite.boxify.base.BaseActivity
 import kh.edu.rupp.ite.boxify.databinding.ActivityRegisterationBinding
 import kh.edu.rupp.ite.boxify.helper.Constants
 import kh.edu.rupp.ite.boxify.helper.MessageUtils
-import kh.edu.rupp.ite.boxify.internet.client.ApiClient.apiService
-import kh.edu.rupp.ite.boxify.internet.client.SessionManager
+import kh.edu.rupp.ite.boxify.internet.client.SharedPreferencesManager
 import kh.edu.rupp.ite.boxify.redirect.Redirect
 import kh.edu.rupp.ite.boxify.view_model.ViewModelFactory
 
 class RegistrationActivity : BaseActivity<ActivityRegisterationBinding>(ActivityRegisterationBinding::inflate) {
-    private lateinit var sessionManager: SessionManager
     private lateinit var mViewModel : RegistrationViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         mViewModel = ViewModelProvider(this, ViewModelFactory(this))[RegistrationViewModel::class.java]
-        // Initialize sessionManager
-        sessionManager = SessionManager(this)
         doAction()
         doObserve()
     }
@@ -43,7 +35,9 @@ class RegistrationActivity : BaseActivity<ActivityRegisterationBinding>(Activity
             if (it.success){
                 it.data?.let { registerResponse ->
                     registerResponse.accessToken?.let { token ->
+                        SharedPreferencesManager.AuthManager.saveAuthToken(this, token)
                         Redirect.gotoLoginActivity(this)
+                        finishAffinity()
                     }
                 }
             }else {

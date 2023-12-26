@@ -1,10 +1,7 @@
 package kh.edu.rupp.ite.boxify.view.ui.activity.create_user
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import kh.edu.rupp.ite.boxify.base.BaseActivity
 import kh.edu.rupp.ite.boxify.databinding.ActivityLoginBinding
@@ -12,23 +9,19 @@ import kh.edu.rupp.ite.boxify.helper.Constants
 import kh.edu.rupp.ite.boxify.helper.CustomDialog
 import kh.edu.rupp.ite.boxify.helper.MessageUtils
 import kh.edu.rupp.ite.boxify.internet.client.ApiClient
-import kh.edu.rupp.ite.boxify.internet.client.SessionManager
+import kh.edu.rupp.ite.boxify.internet.client.SharedPreferencesManager
 import kh.edu.rupp.ite.boxify.redirect.Redirect
-import kh.edu.rupp.ite.boxify.view.ui.activity.MainActivity
 import kh.edu.rupp.ite.boxify.view_model.LoginViewModel
 import kh.edu.rupp.ite.boxify.view_model.ViewModelFactory
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
     private lateinit var mViewModel: LoginViewModel
-    private lateinit var sessionManager: SessionManager
+    private lateinit var sessionManager: SharedPreferencesManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         mViewModel = ViewModelProvider(this, ViewModelFactory(this))[LoginViewModel::class.java]
-
-        // Initialize sessionManager
-        sessionManager = SessionManager(this)
 
         //call function
         doObserve()
@@ -46,13 +39,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         mViewModel.loginResponseLiveData.observe(this) {
             if (it.success){
                 it.data?.let {loginResponse ->
-                    MessageUtils.showSuccess(this@LoginActivity, "",it.message, object : CustomDialog.OnDialogClickListener{
-                        override fun onClick(dialog: CustomDialog) {
-                            Redirect.gotoMainActivity(this@LoginActivity)
-                            dialog.dismiss()
-                            finish()
-                        }
-                    })
+                    if (loginResponse.accessToken != null){
+                        SharedPreferencesManager.AuthManager.saveAuthToken(this,loginResponse.accessToken)
+                        ApiClient.setToken(loginResponse.accessToken)
+                        Redirect.gotoMainActivity(this)
+                        finishAffinity()
+                    }
                 }
             }else {
                 MessageUtils.showError(this,"", it.message?: "")

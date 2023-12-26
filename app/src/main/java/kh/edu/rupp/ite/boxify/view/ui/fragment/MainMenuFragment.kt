@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kh.edu.rupp.ite.boxify.databinding.FragmentMainMenuBinding
-import kh.edu.rupp.ite.boxify.internet.client.SessionManager
+import kh.edu.rupp.ite.boxify.internet.client.SharedPreferencesManager
 
 class MainMenuFragment : Fragment() {
 
     private lateinit var binding: FragmentMainMenuBinding
-    private lateinit var sessionManager: SessionManager
+    private lateinit var sessionManager: SharedPreferencesManager
 
     override fun onCreateView(
         inflater: LayoutInflater,

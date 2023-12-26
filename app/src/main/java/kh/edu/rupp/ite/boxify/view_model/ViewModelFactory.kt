@@ -3,10 +3,7 @@ package kh.edu.rupp.ite.boxify.view_model
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import kh.edu.rupp.ite.boxify.internet.client.SessionManager
 import kh.edu.rupp.ite.boxify.internet.repository.Repository
-import kh.edu.rupp.ite.boxify.internet.service.ApiService
-import retrofit2.Retrofit
 
 class ViewModelFactory(
     val context: Context
