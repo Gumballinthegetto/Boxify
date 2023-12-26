@@ -10,9 +10,8 @@ import kh.edu.rupp.ite.boxify.view.ui.fragment.StartUpFirstPageFragment
 import kh.edu.rupp.ite.boxify.view.ui.fragment.StartUpSecondPageFragment
 import kh.edu.rupp.ite.boxify.view.ui.fragment.StartUpThirdPageFragment
 
-class StartupActivity : BaseActivity() {
+class StartupActivity : BaseActivity<ActivityStartupBinding>(ActivityStartupBinding::inflate) {
 
-    private lateinit var binding : ActivityStartupBinding
     private lateinit var adapter : StartUpViewPager2Adapter
     private val startUpFirstPageFragment = StartUpFirstPageFragment()
     private val startUpSecondPageFragment = StartUpSecondPageFragment()

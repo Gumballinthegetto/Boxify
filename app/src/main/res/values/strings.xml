@@ -82,4 +82,6 @@
     <string name="it_equipment">IT equipment</string>
     <string name="items_types">Items types</string>
     <string name="products_being_sold">Products being sold</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>
