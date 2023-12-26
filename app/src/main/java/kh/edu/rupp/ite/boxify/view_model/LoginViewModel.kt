@@ -34,17 +34,22 @@ class LoginViewModel(
                 val response = repository.login(loginBody)
                 when(response){
                     is ResultWrapper.Success -> {
+                        isLoading.value = false
                         response.data.let {
                             _loginResponseLiveData.value = it
                         }
                     }
                     is ResultWrapper.OnError -> {
+                        isLoading.value = false
                         errorMessage.value = response.message
                     }
                 }
             } catch (e: Exception) {
+                isLoading.value = false
                 // Log the exception for debuggin
                 errorMessage.value = e.message ?: "error"
+            } finally {
+                isLoading.value = false
             }
         }
 

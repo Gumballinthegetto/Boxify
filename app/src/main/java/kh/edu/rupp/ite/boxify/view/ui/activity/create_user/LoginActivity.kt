@@ -49,6 +49,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
                     MessageUtils.showSuccess(this@LoginActivity, "",it.message, object : CustomDialog.OnDialogClickListener{
                         override fun onClick(dialog: CustomDialog) {
                             Redirect.gotoMainActivity(this@LoginActivity)
+                            dialog.dismiss()
+                            finish()
                         }
                     })
                 }

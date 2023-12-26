@@ -3,13 +3,14 @@ package kh.edu.rupp.ite.boxify.helper
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.Window
 import kh.edu.rupp.ite.boxify.R
 import kh.edu.rupp.ite.boxify.databinding.CustomDialogLayoutBinding
 
 
-class CustomDialog(context: Context, private val dialogType : DialogType) : Dialog(context){
+class CustomDialog(context: Context, private val dialogType : DialogType) : Dialog(context), View.OnClickListener{
 
     private var title: String? = null
     private var message: String? = null
@@ -43,14 +44,8 @@ class CustomDialog(context: Context, private val dialogType : DialogType) : Dial
                  binding.imageView.setImageResource(R.drawable.error_icon)
              }
         }
-        binding.positiveButton.setOnClickListener {
-            if (onDialogClickListener!= null){
-                onDialogClickListener?.onClick(this)
-            }
-        }
-        binding.negativeButton.setOnClickListener {
-            dismiss()
-        }
+        binding.positiveButton.setOnClickListener (this)
+        binding.negativeButton.setOnClickListener(this)
     }
 
     fun setTitle(title : String) : CustomDialog{
@@ -87,5 +82,20 @@ class CustomDialog(context: Context, private val dialogType : DialogType) : Dial
     enum class DialogType{
         ERROR_TYPE,
         SUCCESS_TYPE
+    }
+
+    override fun onClick(view: View) {
+        when(view.id){
+            R.id.negative_button -> {
+                dismiss()
+            }
+            R.id.positive_button -> {
+                if (onDialogClickListener != null){
+                    onDialogClickListener!!.onClick(this)
+                }else {
+                    dismiss()
+                }
+            }
+        }
     }
 }
