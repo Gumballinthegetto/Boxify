@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kh.edu.rupp.ite.boxify.databinding.FragmentMainMenuBinding
-import kh.edu.rupp.ite.boxify.internet.client.SharedPreferencesManager
+import kh.edu.rupp.ite.boxify.helper.SharedPreferencesManager
 
 class MainMenuFragment : Fragment() {
 

@@ -6,10 +6,9 @@ import androidx.lifecycle.ViewModelProvider
 import kh.edu.rupp.ite.boxify.base.BaseActivity
 import kh.edu.rupp.ite.boxify.databinding.ActivityLoginBinding
 import kh.edu.rupp.ite.boxify.helper.Constants
-import kh.edu.rupp.ite.boxify.helper.CustomDialog
 import kh.edu.rupp.ite.boxify.helper.MessageUtils
 import kh.edu.rupp.ite.boxify.internet.client.ApiClient
-import kh.edu.rupp.ite.boxify.internet.client.SharedPreferencesManager
+import kh.edu.rupp.ite.boxify.helper.SharedPreferencesManager
 import kh.edu.rupp.ite.boxify.redirect.Redirect
 import kh.edu.rupp.ite.boxify.view_model.LoginViewModel
 import kh.edu.rupp.ite.boxify.view_model.ViewModelFactory

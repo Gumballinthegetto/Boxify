@@ -1,4 +1,4 @@
-package kh.edu.rupp.ite.boxify.internet.client
+package kh.edu.rupp.ite.boxify.helper
 
 import android.content.Context
 

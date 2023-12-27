@@ -7,7 +7,7 @@ import kh.edu.rupp.ite.boxify.databinding.ActivityStartupBinding
 import kh.edu.rupp.ite.boxify.helper.Constants
 import kh.edu.rupp.ite.boxify.helper.MessageUtils
 import kh.edu.rupp.ite.boxify.internet.client.ApiClient
-import kh.edu.rupp.ite.boxify.internet.client.SharedPreferencesManager
+import kh.edu.rupp.ite.boxify.helper.SharedPreferencesManager
 import kh.edu.rupp.ite.boxify.redirect.Redirect
 import kh.edu.rupp.ite.boxify.view.ui.fragment.StartUpFirstPageFragment
 import kh.edu.rupp.ite.boxify.view.ui.fragment.StartUpSecondPageFragment

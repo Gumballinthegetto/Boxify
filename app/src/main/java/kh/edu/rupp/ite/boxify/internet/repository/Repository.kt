@@ -26,7 +26,7 @@ class Repository {
             }
         }
     }
-    suspend fun <T: Any>requestApi(call : suspend() -> Response<T> ) : ResultWrapper<T>{
+    private suspend fun <T: Any> requestApi(call : suspend() -> Response<T> ) : ResultWrapper<T>{
         val response : Response<T>
         try {
             response = call.invoke()
