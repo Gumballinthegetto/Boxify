@@ -24,13 +24,19 @@
             android:name=".view.ui.activity.create_user.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.create_user.AnswerActivity"
+            android:name=".view.ui.activity.create_user.SignUpActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".view.ui.activity.AnswerActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.QuestionActivity"
+            android:name=".view.ui.activity.QuestionActivity"
             android:exported="false" />
         <activity
             android:name=".view.ui.activity.AddItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ui.activity.AddFolderActivity"
             android:exported="false" />
         <activity
             android:name=".view.ui.activity.MainActivity"

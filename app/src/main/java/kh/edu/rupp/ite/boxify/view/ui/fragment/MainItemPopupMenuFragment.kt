@@ -10,6 +10,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kh.edu.rupp.ite.boxify.databinding.FragmentMainItemPopupMenuBinding
+import kh.edu.rupp.ite.boxify.view.ui.activity.AddFolderActivity
 import kh.edu.rupp.ite.boxify.view.ui.activity.AddItemActivity
 
 class MainItemPopupMenuFragment : BottomSheetDialogFragment() {
@@ -33,6 +34,13 @@ class MainItemPopupMenuFragment : BottomSheetDialogFragment() {
         binding.itemPopupMenuAddItemBtn.setOnClickListener {
             activity?.let {
                 val intent = Intent(it, AddItemActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        binding.itemPopupMenuAddFolderBtn.setOnClickListener {
+            activity?.let {
+                val intent = Intent(it, AddFolderActivity::class.java)
                 startActivity(intent)
             }
         }

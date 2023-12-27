@@ -82,4 +82,9 @@
     <string name="it_equipment">IT equipment</string>
     <string name="items_types">Items types</string>
     <string name="products_being_sold">Products being sold</string>
+    <string name="get_started_for_free_today">Get started for free today</string>
+    <string name="full_name">Full Name</string>
+    <string name="enter_your_full_name">Enter your full name</string>
+    <string name="sign_up_with_google">Sign up with Google</string>
+    <string name="enter_folder_name">Enter Folder Name</string>
 </resources>
