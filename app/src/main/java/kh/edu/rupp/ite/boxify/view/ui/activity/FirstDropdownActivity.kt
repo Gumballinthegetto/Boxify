@@ -7,6 +7,6 @@ import kh.edu.rupp.ite.boxify.R
 class FirstDropdownActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_first_dropdown)
+        setContentView(R.layout.activity_continue_first_dropdown)
     }
 }

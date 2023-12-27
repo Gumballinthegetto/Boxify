@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.ui.activity.create_user.LoginActivity">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,21 +24,51 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:text="@string/welcome_back"
+            android:text="@string/create_an_account"
             android:textSize="26sp"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/log_into_your_account"
+            android:text="@string/get_started_for_free_today"
             android:textSize="16sp"/>
 
-        <!-- email -->
+        <!-- full name -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
+                android:text="@string/full_name"
+                android:textColor="@color/md_theme_dark_shadow"
+                android:textSize="16sp"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fullname_edt"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:paddingVertical="14dp"
+                android:hint="@string/enter_your_full_name"
+                android:background="@drawable/text_input_white_bg_drawable"
+                android:maxLines="1"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray_dark"/>
+
+        <!-- Email -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:padding="5dp">
             <TextView
                 android:layout_width="130dp"
@@ -98,15 +126,6 @@
             android:background="@color/gray_dark"/>
 
         <TextView
-            android:id="@+id/action_forgot_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:padding="25dp"
-            android:text="@string/forgot_password"
-            android:textSize="14sp"/>
-
-        <TextView
             android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -116,7 +135,7 @@
             android:textSize="14sp"/>
 
         <LinearLayout
-            android:id="@+id/action_Login_Continue"
+            android:id="@+id/action_create_account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_button_bg_drawable"
@@ -127,7 +146,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/continue_"
+                android:text="@string/create_an_account"
                 android:textSize="16sp"
                 android:textColor="@color/white"/>
         </LinearLayout>
@@ -158,7 +177,7 @@
         </LinearLayout>
 
         <RelativeLayout
-            android:id="@+id/action_signin_google"
+            android:id="@+id/action_signup_google"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_white_button_bg_drawable"
@@ -171,13 +190,14 @@
                 android:layout_marginStart="5dp"
                 android:src="@drawable/google_logo"
                 android:layout_centerVertical="true"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sign_in_with_google"
                 android:layout_centerInParent="true"
-                android:textSize="14sp"
-                android:textColor="@color/black"/>
+                android:text="@string/sign_up_with_google"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
         </RelativeLayout>
 
     </LinearLayout>
@@ -193,21 +213,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/new_here"
+            android:text="@string/already_have_an_account"
             android:textSize="14sp"/>
         <TextView
-            android:id="@+id/action_create_account"
+            android:id="@+id/action_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
             android:padding="10dp"
-            android:text="@string/create_an_account"
+            android:text="@string/log_in"
             android:textStyle="bold"
             android:textSize="14sp"/>
     </LinearLayout>
-
-    <include layout="@layout/loading_layout"
-        android:id="@+id/loading_view"
-        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

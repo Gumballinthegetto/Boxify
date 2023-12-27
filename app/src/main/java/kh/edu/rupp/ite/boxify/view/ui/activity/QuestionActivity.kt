@@ -7,6 +7,6 @@ import kh.edu.rupp.ite.boxify.R
 class QuestionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_question)
+        setContentView(R.layout.activity_continue_question)
     }
 }

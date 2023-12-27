@@ -72,7 +72,8 @@
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
         android:layout_marginTop="20dp"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:backgroundTint="@color/gray_light_transaprent">
 
         <ImageView
             android:layout_width="wrap_content"
