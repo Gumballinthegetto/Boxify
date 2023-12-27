@@ -87,4 +87,6 @@
     <string name="enter_your_full_name">Enter your full name</string>
     <string name="sign_up_with_google">Sign up with Google</string>
     <string name="enter_folder_name">Enter Folder Name</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

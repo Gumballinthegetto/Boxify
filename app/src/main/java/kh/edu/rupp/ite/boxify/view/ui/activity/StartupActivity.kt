@@ -5,14 +5,16 @@ import kh.edu.rupp.ite.boxify.adapter.StartUpViewPager2Adapter
 import kh.edu.rupp.ite.boxify.base.BaseActivity
 import kh.edu.rupp.ite.boxify.databinding.ActivityStartupBinding
 import kh.edu.rupp.ite.boxify.helper.Constants
+import kh.edu.rupp.ite.boxify.helper.MessageUtils
+import kh.edu.rupp.ite.boxify.internet.client.ApiClient
+import kh.edu.rupp.ite.boxify.helper.SharedPreferencesManager
 import kh.edu.rupp.ite.boxify.redirect.Redirect
 import kh.edu.rupp.ite.boxify.view.ui.fragment.StartUpFirstPageFragment
 import kh.edu.rupp.ite.boxify.view.ui.fragment.StartUpSecondPageFragment
 import kh.edu.rupp.ite.boxify.view.ui.fragment.StartUpThirdPageFragment
 
-class StartupActivity : BaseActivity() {
+class StartupActivity : BaseActivity<ActivityStartupBinding>(ActivityStartupBinding::inflate) {
 
-    private lateinit var binding : ActivityStartupBinding
     private lateinit var adapter : StartUpViewPager2Adapter
     private val startUpFirstPageFragment = StartUpFirstPageFragment()
     private val startUpSecondPageFragment = StartUpSecondPageFragment()
@@ -39,7 +41,14 @@ class StartupActivity : BaseActivity() {
 
     private fun doAction(){
         binding.getStartedBtn.setOnClickListener {
-            Redirect.gotoMainActivity(this)
+            val token = SharedPreferencesManager.AuthManager.getToken(this)
+            if (token.isNotEmpty()){
+                Redirect.gotoMainActivity(this)
+                ApiClient.setToken(token)
+            } else {
+                MessageUtils.showError(this, "Error","You haven't registered yet!")
+            }
+
         }
 
         binding.actionLogin.setOnClickListener{

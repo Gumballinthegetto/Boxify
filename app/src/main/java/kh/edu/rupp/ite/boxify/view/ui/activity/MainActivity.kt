@@ -2,7 +2,6 @@ package kh.edu.rupp.ite.boxify.view.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.app.TaskStackBuilder
 import androidx.fragment.app.Fragment
 import kh.edu.rupp.ite.boxify.R
 import kh.edu.rupp.ite.boxify.databinding.ActivityMainBinding
@@ -29,6 +28,22 @@ class MainActivity : AppCompatActivity() {
             showDefaultFragment()
         }
 
+        doAction()
+
+    }
+    private fun showFragment(fragment: Fragment) {
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.layoutFrameMain, fragment)
+        fragmentTransaction.commit()
+    }
+
+    private fun showDefaultFragment() {
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.layoutFrameMain, mainDashBoardFragment)
+        fragmentTransaction.commit()
+    }
+
+    private fun doAction(){
         binding.mainBottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.menuDashboard -> {
@@ -52,21 +67,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    override fun onCreateSupportNavigateUpTaskStack(builder: TaskStackBuilder) {
-        super.onCreateSupportNavigateUpTaskStack(builder)
-    }
-
-    private fun showFragment(fragment: Fragment) {
-        val fragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.layoutFrameMain, fragment)
-        fragmentTransaction.commit()
-    }
-
-    private fun showDefaultFragment() {
-        val fragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.layoutFrameMain, mainDashBoardFragment)
-        fragmentTransaction.commit()
     }
 }

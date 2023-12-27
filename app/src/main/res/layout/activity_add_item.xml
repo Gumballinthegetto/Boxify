@@ -35,6 +35,7 @@
                 android:layout_weight="1"/>
 
             <Button
+                android:id="@+id/action_save"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_bold_btn"
@@ -55,10 +56,26 @@
             android:background="@drawable/bg_dotted_stroke"
             android:gravity="center">
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_image_wrapper"
+                android:layout_width="match_parent"
+                android:layout_margin="3dp"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="10dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/item_image_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </androidx.cardview.widget.CardView>
+
             <TextView
+                android:id="@+id/action_add_photo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="2dp"
+                android:padding="10dp"
                 android:text="@string/add_photos"
                 app:drawableTopCompat="@drawable/add_image" />
 
@@ -96,15 +113,15 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/add_item_edit_text"
+            android:id="@+id/item_name_edt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:paddingBottom="20dp"
+            android:padding="15dp"
+            android:focusableInTouchMode="true"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:textStyle="bold"
-            android:textSize="22sp"
+            android:textSize="16sp"
             android:hint="@string/enter_item_name"
             app:layout_constraintTop_toBottomOf="@id/add_item_item_name_icon"
             android:background="@drawable/bg_bottom_stroke"/>
@@ -116,7 +133,7 @@
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/add_item_edit_text"
+            app:layout_constraintTop_toBottomOf="@id/item_name_edt"
             android:orientation="vertical"
             android:background="@drawable/bg_top_and_bottom_stroke">
 
@@ -155,14 +172,16 @@
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="20dp"
+                                android:layout_marginTop="15dp"
                                 android:orientation="horizontal">
 
                                 <EditText
+                                    android:id="@+id/quantity_edt"
                                     android:layout_width="100dp"
                                     android:layout_height="wrap_content"
-                                    android:hint="@string/_1"
-                                    android:textSize="15sp"
+                                    android:hint="0"
+                                    android:textSize="16sp"
+                                    android:padding="5dp"
                                     android:background="@drawable/no_underline_edit_text"/>
 
                                 <TextView
@@ -194,10 +213,11 @@
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="20dp"
-                                android:layout_marginStart="-6dp"
-                                android:background="@drawable/no_underline_edit_text"
-                                android:drawableStart="@drawable/hyphen"/>
+                                android:layout_marginTop="15dp"
+                                android:hint="min level"
+                                android:padding="5dp"
+                                android:textSize="16sp"
+                                android:background="@drawable/no_underline_edit_text"/>
 
                         </LinearLayout>
 
@@ -222,9 +242,10 @@
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="20dp"
-                                android:layout_marginStart="-6dp"
-                                android:drawableStart="@drawable/hyphen"
+                                android:layout_marginTop="15dp"
+                                android:hint="price"
+                                android:textSize="16sp"
+                                android:padding="5dp"
                                 android:background="@drawable/no_underline_edit_text"/>
 
                         </LinearLayout>
@@ -248,11 +269,11 @@
                             <EditText
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="20dp"
-                                android:layout_marginStart="-6dp"
-                                android:drawableStart="@drawable/hyphen"
+                                android:layout_marginTop="15dp"
+                                android:hint="total price"
+                                android:textSize="16sp"
+                                android:padding="5dp"
                                 android:background="@drawable/no_underline_edit_text"/>
-
 
                         </LinearLayout>
 

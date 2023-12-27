@@ -15,6 +15,9 @@
         android:theme="@style/Base.Theme.Boxify"
         tools:targetApi="31">
         <activity
+            android:name=".view.ui.activity.create_user.RegistrationActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.ui.activity.SecondDropdownActivity"
             android:exported="false" />
         <activity
