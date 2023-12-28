@@ -1,8 +1,11 @@
 package kh.edu.rupp.ite.boxify.internet.repository
 
 import kh.edu.rupp.ite.boxify.data.ResultWrapper
+import kh.edu.rupp.ite.boxify.data.model.ItemModel
+import kh.edu.rupp.ite.boxify.data.request.AddItemRequestBody
 import kh.edu.rupp.ite.boxify.data.request.LoginRequest
 import kh.edu.rupp.ite.boxify.data.request.RegisterBodyRequest
+import kh.edu.rupp.ite.boxify.data.response.AddItemResponse
 import kh.edu.rupp.ite.boxify.data.response.BaseModelWrapper
 import kh.edu.rupp.ite.boxify.data.response.LoginResponse
 import kh.edu.rupp.ite.boxify.data.response.RegisterResponse
@@ -23,6 +26,21 @@ class Repository {
         return withContext(Dispatchers.IO){
             requestApi {
                 ApiClient.apiService.registerUser(body)
+            }
+        }
+    }
+    suspend fun addFolder(body : AddItemRequestBody) : ResultWrapper<BaseModelWrapper<ItemModel>>{
+        return withContext(Dispatchers.IO){
+            requestApi {
+                ApiClient.apiService.addFolder(body)
+            }
+        }
+    }
+
+    suspend fun getListFolder() : ResultWrapper<BaseModelWrapper<ArrayList<ItemModel>>>{
+        return withContext(Dispatchers.IO){
+            requestApi {
+                ApiClient.apiService.getListFolder()
             }
         }
     }

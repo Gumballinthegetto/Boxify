@@ -17,6 +17,9 @@ class ViewModelFactory(
         } else if (modelClass.isAssignableFrom(LoginViewModel::class.java)){
             @Suppress("UNCHECKED_CAST")
             return LoginViewModel(repository) as T
+        } else if (modelClass.isAssignableFrom(AddItemViewModel::class.java)){
+            @Suppress("UNCHECKED_CAST")
+            return AddItemViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

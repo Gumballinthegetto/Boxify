@@ -35,6 +35,7 @@ class MainItemPopupMenuFragment : BottomSheetDialogFragment() {
             activity?.let {
                 val intent = Intent(it, AddItemActivity::class.java)
                 startActivity(intent)
+                this.dismiss()
             }
         }
 
@@ -42,6 +43,7 @@ class MainItemPopupMenuFragment : BottomSheetDialogFragment() {
             activity?.let {
                 val intent = Intent(it, AddFolderActivity::class.java)
                 startActivity(intent)
+                this.dismiss()
             }
         }
     }

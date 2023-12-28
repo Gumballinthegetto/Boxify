@@ -1,12 +1,16 @@
 package kh.edu.rupp.ite.boxify.internet.service
 
+import kh.edu.rupp.ite.boxify.data.model.ItemModel
+import kh.edu.rupp.ite.boxify.data.request.AddItemRequestBody
 import kh.edu.rupp.ite.boxify.data.request.LoginRequest
 import kh.edu.rupp.ite.boxify.data.response.LoginResponse
 import kh.edu.rupp.ite.boxify.data.request.RegisterBodyRequest
+import kh.edu.rupp.ite.boxify.data.response.AddItemResponse
 import kh.edu.rupp.ite.boxify.data.response.BaseModelWrapper
 import kh.edu.rupp.ite.boxify.data.response.RegisterResponse
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ApiService {
@@ -15,4 +19,9 @@ interface ApiService {
 
     @POST("api/login")
     suspend fun loginUser(@Body request: LoginRequest): Response<BaseModelWrapper<LoginResponse>>
+
+    @POST("api/folders/store")
+    suspend fun addFolder(@Body request: AddItemRequestBody): Response<BaseModelWrapper<ItemModel>>
+    @GET("api/folders/index")
+    suspend fun getListFolder(): Response<BaseModelWrapper<ArrayList<ItemModel>>>
 }

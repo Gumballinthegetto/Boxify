@@ -12,8 +12,8 @@ object ApiClient {
     private var token : String = ""
 
     private val okHttpClient = OkHttpClient.Builder()
-        .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
         .addInterceptor(AuthInterceptor())
+        .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
         .build()
 
     private val retrofit = Retrofit.Builder()

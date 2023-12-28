@@ -9,6 +9,7 @@ import kh.edu.rupp.ite.boxify.databinding.ActivityRegisterationBinding
 import kh.edu.rupp.ite.boxify.helper.Constants
 import kh.edu.rupp.ite.boxify.helper.MessageUtils
 import kh.edu.rupp.ite.boxify.helper.SharedPreferencesManager
+import kh.edu.rupp.ite.boxify.internet.client.ApiClient
 import kh.edu.rupp.ite.boxify.redirect.Redirect
 import kh.edu.rupp.ite.boxify.view_model.ViewModelFactory
 
@@ -36,6 +37,7 @@ class RegistrationActivity : BaseActivity<ActivityRegisterationBinding>(Activity
                 it.data?.let { registerResponse ->
                     registerResponse.accessToken?.let { token ->
                         SharedPreferencesManager.AuthManager.saveAuthToken(this, token)
+                        ApiClient.setToken(token)
                         Redirect.gotoLoginActivity(this)
                         finishAffinity()
                     }

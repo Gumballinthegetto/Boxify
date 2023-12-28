@@ -14,6 +14,16 @@ object SharedPreferencesManager{
 
     object AuthManager{
         const val TOKEN_KEY = "token_key"
+        const val NEW_USER_KEY = "new_user_key"
+        const val newUser = "new_user"
+        const val oldUser = "old_user"
+
+        fun setToOldUser(context: Context){
+            setStringPreference(context, oldUser, NEW_USER_KEY)
+        }
+        fun isNewUser(context: Context) : Boolean{
+            return getStringPreference(context, NEW_USER_KEY) != oldUser
+        }
         fun saveAuthToken(context: Context,token: String) {
             setStringPreference(context, token, TOKEN_KEY)
         }

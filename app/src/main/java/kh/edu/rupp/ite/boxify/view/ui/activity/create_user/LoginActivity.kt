@@ -22,21 +22,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
-        binding.actionCreateAccount.setOnClickListener {
-            val intent = Intent(this, SignUpActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.actionLoginContinue.setOnClickListener {
-            val intent = Intent(this, QuestionActivity::class.java)
-            startActivity(intent)
-            mViewModel = ViewModelProvider(this, ViewModelFactory(this))[LoginViewModel::class.java]
-
-            //call function
-            doObserve()
-            doAction()
-        }
+        mViewModel = ViewModelProvider(this, ViewModelFactory(this))[LoginViewModel::class.java]
+        //call function
+        doObserve()
+        doAction()
     }
     private fun doObserve() {
         mViewModel.isLoading.observe(this) {
@@ -56,7 +45,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
                             loginResponse.accessToken
                         )
                         ApiClient.setToken(loginResponse.accessToken)
-                        Redirect.gotoMainActivity(this)
+                        Redirect.gotoQuestionActivity(this)
                         finishAffinity()
                     }
                 }
@@ -69,12 +58,13 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
     // function button action
     private fun doAction() {
         binding.actionCreateAccount.setOnClickListener {
-            Redirect.gotoSignupActivity(this, Constants.SIGNUP)
+            Redirect.gotoSignupActivity(this)
         }
         binding.actionLoginContinue.setOnClickListener {
             val email = binding.emailEdt.text?.toString() ?: ""
             val password = binding.passwordEdt.text?.toString() ?: ""
             mViewModel.loginUser(email, password)
         }
+
     }
 }

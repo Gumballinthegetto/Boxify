@@ -1,6 +1,7 @@
 package kh.edu.rupp.ite.boxify.view.ui.activity
 
 import android.os.Bundle
+import android.util.Log
 import kh.edu.rupp.ite.boxify.adapter.StartUpViewPager2Adapter
 import kh.edu.rupp.ite.boxify.base.BaseActivity
 import kh.edu.rupp.ite.boxify.databinding.ActivityStartupBinding
@@ -45,6 +46,7 @@ class StartupActivity : BaseActivity<ActivityStartupBinding>(ActivityStartupBind
             if (token.isNotEmpty()){
                 Redirect.gotoMainActivity(this)
                 ApiClient.setToken(token)
+                Log.d("ddjhddkdjfkdfd", "doAction: token : $token")
             } else {
                 MessageUtils.showError(this, "Error","You haven't registered yet!")
             }
