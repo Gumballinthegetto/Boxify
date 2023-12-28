@@ -89,4 +89,9 @@
     <string name="enter_folder_name">Enter Folder Name</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="inventory_summary">Inventory Summary</string>
+    <string name="folders">Folders</string>
+    <string name="total_qty">Total Qty</string>
+    <string name="_1_500">1,500$</string>
+    <string name="_1_unit">1 unit</string>
 </resources>
